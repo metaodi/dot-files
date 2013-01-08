@@ -1,14 +1,3 @@
-[merge]
-	tool = beyondmerge
-[mergetool "beyondmerge"]
-	cmd = beyondmerge.sh "$PWD/$LOCAL" "$PWD/$BASE" "$PWD/$REMOTE" "$PWD/$MERGED"
-	trustExitCode = false
-[mergetool "kdiff3"]
-	path = c:/Program Files (x86)/KDiff3/kdiff3.exe
-[diff]
-	guitool = kdiff3
-[difftool "kdiff3"]
-	path = c:/Program Files (x86)/KDiff3/kdiff3.exe
 [core]
 	editor = vi
 	autocrlf = true
@@ -26,7 +15,7 @@
         graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
         last = log --pretty=format:\"<%h> %ad %Cgreen%d%Creset %s [%an]\" --date-order --date=short
         lg = log --decorate --pretty=oneline --abbrev-commit
-        lol = !git lg --graph 
+        lol = !git graph --decoreate --abbrev-commit
         lola = !git lol --all
         ld = !git lg ..origin/master
         fu = !git fetch origin && git ld
@@ -37,3 +26,5 @@
         stat = log --stat
         rhh = reset --hard HEAD
         ls = ls-files
+[color]
+        ui = true
