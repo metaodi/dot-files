@@ -5,6 +5,8 @@ filetype indent plugin on
 
 " Enable syntax highlighting
 syntax on
+set background=dark
+colorscheme solarized
 
 " Highlight searches (use <C-L> to temporarily turn off highlighting; see the
 " mapping of <C-L> below)
@@ -13,3 +15,9 @@ set hlsearch
 " Use case insensitive search, except when using capital letters
 set ignorecase
 set smartcase
+
+" Indent
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
