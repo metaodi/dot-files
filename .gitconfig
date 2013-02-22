@@ -26,5 +26,6 @@
     stat = log --stat
     rhh = reset --hard HEAD
     ls = ls-files
+    wdiff = diff --word-diff
 [color]
     ui = true
