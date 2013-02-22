@@ -5,26 +5,26 @@
 	name = Stefan Oderbolz
 	email = oderbolz@gmail.com
 [alias]
-        co = checkout
-        ci = commit
-        st = status
-        br = branch
-        hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-        type = cat-file -t
-        dump = cat-file -p
-        graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
-        last = log --pretty=format:\"<%h> %ad %Cgreen%d%Creset %s [%an]\" --date-order --date=short
-        lg = log --decorate --pretty=oneline --abbrev-commit
-        lol = !git graph --decoreate --abbrev-commit
-        lola = !git lol --all
-        ld = !git lg ..origin/master
-        fu = !git fetch origin && git ld
-        newstash = stash -u
-        dc = clean -d -x -n
-        fc = clean -d -x -f
-        cleandir = !git stash -u && git stash drop
-        stat = log --stat
-        rhh = reset --hard HEAD
-        ls = ls-files
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+    graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+    last = log --pretty=format:\"<%h> %ad %Cgreen%d%Creset %s [%an]\" --date-order --date=short
+    lg = log --decorate --pretty=oneline --abbrev-commit
+    lol = !git graph --decoreate --abbrev-commit
+    lola = !git lol --all
+    ld = !git lg ..origin/master
+    fu = !git fetch origin && git ld
+    newstash = stash -u
+    dc = clean -d -x -n
+    fc = clean -d -x -f
+    cleandir = !git stash -u && git stash drop
+    stat = log --stat
+    rhh = reset --hard HEAD
+    ls = ls-files
 [color]
-        ui = true
+    ui = true
