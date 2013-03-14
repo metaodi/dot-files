@@ -1,9 +1,12 @@
 [core]
-	editor = vi
-	autocrlf = input
+    editor = vi
+    autocrlf = input
+    excludesfile = ~/.gitignore
+
 [user]
-	name = Stefan Oderbolz
-	email = oderbolz@gmail.com
+    name = Stefan Oderbolz
+    email = oderbolz@gmail.com
+
 [alias]
     co = checkout
     ci = commit
@@ -27,5 +30,6 @@
     rhh = reset --hard HEAD
     ls = ls-files
     wdiff = diff --word-diff
+
 [color]
     ui = true
