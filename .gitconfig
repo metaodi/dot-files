@@ -18,7 +18,7 @@
     graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
     last = log --pretty=format:\"<%h> %ad %Cgreen%d%Creset %s [%an]\" --date-order --date=short
     lg = log --decorate --pretty=oneline --abbrev-commit
-    lol = !git graph --decoreate --abbrev-commit
+    lol = !git graph --decorate --abbrev-commit
     lola = !git lol --all
     ld = !git lg ..origin/master
     fu = !git fetch origin && git ld
