@@ -1,37 +1,50 @@
 [core]
-    editor = vi
-    autocrlf = input
-    excludesfile = ~/.gitignore
+  editor = vi
+  autocrlf = input 
+  excludesfile = ~/.gitignore
 
 [user]
-    name = Stefan Oderbolz
-    email = oderbolz@gmail.com
+  name = Stefan Oderbolz
+  email = oderbolz@gmail.com
 
 [alias]
-    co = checkout
-    ci = commit
-    st = status
-    br = branch
-    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-    type = cat-file -t
-    dump = cat-file -p
-    graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
-    last = log --pretty=format:\"<%h> %ad %Cgreen%d%Creset %s [%an]\" --date-order --date=short
-    lg = log --decorate --pretty=oneline --abbrev-commit
-    lol = !git graph --decorate --abbrev-commit
-    lola = !git lol --all
-    ld = !git lg ..origin/master
-    fu = !git fetch origin && git ld
-    newstash = stash -u
-    dc = clean -d -x -n
-    fc = clean -d -x -f
-    cleandir = !git stash -u && git stash drop
-    stat = log --stat
-    rhh = reset --hard HEAD
-    ls = ls-files
-    wdiff = diff --word-diff
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  cur = !git branch | grep \"*\" | sed \"s/* //\"
+  up = !git rev-parse --symbolic-full-name --abbrev-ref @{u} 2>/dev/null | grep -v @{u} || echo "origin/master"
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+  graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+  lg = log --decorate --pretty=oneline --abbrev-commit
+  lol = !git lg --graph
+  lola = !git lol --all
+  ld = !echo "Diff to `git up`:" && git lg ..`git up`
+  last = show -s HEAD^{commit}
+  fu = !git fetch && git ld
+  newstash = stash -u
+  dc = clean -d -x -n
+  fc = clean -d -x -f
+  cleandir = !git stash -u && git stash drop
+  stat = log --stat
+  rhh = reset --hard HEAD
+  ls = ls-files
+  wdiff = diff --word-diff
 
 [color]
-    ui = true
+  ui = true
+
 [push]
-        default = current
+  default = current
+
+[tig]
+  show-rev-graph = yes
+  show-refs = yes
+  show-line-numbers = yes
+  line-graphics = utf-8
+[tig "bind"]
+  status= A !git commit --amend
+  status= N !git commit --no-verify
+  generic= W !git diff --word-diff --cached %(file)
