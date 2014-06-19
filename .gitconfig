@@ -48,3 +48,5 @@
   status= A !git commit --amend
   status= N !git commit --no-verify
   generic= W !git diff --word-diff --cached %(file)
+[rerere]
+  enabled = true
