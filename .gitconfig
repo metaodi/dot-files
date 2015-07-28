@@ -12,8 +12,10 @@
   ci = commit
   st = status
   br = branch
+  brm = branch --merged
   cur = !git branch | grep \"*\" | sed \"s/* //\"
-  up = !git rev-parse --symbolic-full-name --abbrev-ref @{u} 2>/dev/null | grep -v @{u} || echo "origin/master"
+  ups = !git rev-parse --symbolic-full-name --abbrev-ref @{u} 2>/dev/null | grep -v @{u} || echo "origin/master" 
+  up = "!git remote update -p; git merge --ff-only @{u}"
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   type = cat-file -t
   dump = cat-file -p
@@ -32,6 +34,7 @@
   rhh = reset --hard HEAD
   ls = ls-files
   wdiff = diff --word-diff
+  search = !git rev-list --all | xargs git grep
   delmerged = !git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d
 
 [color]
