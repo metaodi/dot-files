@@ -16,6 +16,7 @@
   cur = !git branch | grep \"*\" | sed \"s/* //\"
   ups = !git rev-parse --symbolic-full-name --abbrev-ref @{u} 2>/dev/null | grep -v @{u} || echo "origin/master" 
   up = "!git remote update -p; git merge --ff-only @{u}"
+  subup = !git up && git submodule init && git submodule foreach --recursive 'git fetch --tags' && git submodule update --recursive
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   type = cat-file -t
   dump = cat-file -p
