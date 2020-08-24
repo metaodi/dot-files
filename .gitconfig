@@ -2,6 +2,7 @@
   editor = vi
   autocrlf = input 
   excludesfile = ~/.gitignore
+  pager = less -F -X
 
 [user]
   name = Stefan Oderbolz
