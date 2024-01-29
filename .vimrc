@@ -34,3 +34,7 @@ nmap <silent> <C-h> :wincmd h<CR>
 nmap <silent> <C-j> :wincmd j<CR>
 nmap <silent> <C-k> :wincmd k<CR>
 nmap <silent> <C-l> :wincmd l<CR>
+
+" Macros
+" roam-to-vex formatting
+:let @f = "\<Esc>:g/^$/d\<CR>:%s/^.\\{0,3}//\<CR>:%s/^ - /\\r/\<CR>:%s/^# /\\r\\r# /\<CR>"
